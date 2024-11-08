@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Panel</title>
+<style>
+    body {
+        background-color: rgb(255, 255, 128);
+    }
+
+    h2 {
+        font-weight: 500;
+        padding-top: 20px;
+        color: #333;
+    }
+
+    .card {
+        transition: all 0.2s ease;
+        color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Assign different background colors to each card */
+    .card:nth-child(1) .card-body {
+        background-color: #4caf50; /* Green */
+    }
+
+    .card:nth-child(2) .card-body {
+        background-color: #ff9800; /* Orange */
+    }
+
+    .card:nth-child(3) .card-body {
+        background-color: #2196f3; /* Blue */
+    }
+
+    .card:nth-child(4) .card-body {
+        background-color: #f44336; /* Red */
+    }
+
+    .card:nth-child(5) .card-body {
+        background-color: #9c27b0; /* Purple */
+    }
+
+    .card:nth-child(6) .card-body {
+        background-color: #3f51b5; /* Indigo */
+    }
+
+    .card:nth-child(7) .card-body {
+        background-color: #009688; /* Teal */
+    }
+
+    .icon-container {
+        width: 60px;
+        height: 60px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 10px;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h2 class="text-center text-uppercase text-white mb-5 mt-4 mb-1">Admin Panel</h2>
+            <div class="row g-5">
+
+                <!-- Add Product -->
+                <div class="col-md-4">
+                    <a href="/admin/loadAddProduct" class="text-decoration-none ">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-box fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">Add Product</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Add Category -->
+                <div class="col-md-4">
+                    <a href="/admin/category" class="text-decoration-none">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-tags fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">Add Category</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- View Product -->
+                <div class="col-md-4">
+                    <a href="/admin/products" class="text-decoration-none">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-boxes fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">View Products</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Orders -->
+                <div class="col-md-4">
+                    <a href="/admin/orders" class="text-decoration-none">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-truck fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">Manage Orders</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Users -->
+                <div class="col-md-4">
+                    <a href="/admin/users?type=1" class="text-decoration-none">
+                        <div class="card bg-info text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-users fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">Manage Users</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Add Admin -->
+                <div class="col-md-4">
+                    <a href="/admin/add-admin" class="text-decoration-none">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-user-shield fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">Add Admin</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Admin List -->
+                <div class="col-md-12">
+                    <a href="/admin/users?type=2" class="text-decoration-none">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <div class="icon-container text-dark">
+                                    <i class="fa-solid fa-user-cog fa-2x"></i>
+                                </div>
+                                <h5 class="card-title text-dark text-uppercase">Admin List</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
